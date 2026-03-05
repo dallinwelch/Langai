@@ -44,6 +44,17 @@
       overflow-x: hidden;
     }
 
+    /* ─── ICON SVG ─── */
+    .icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .icon svg {
+      display: block;
+    }
+
     /* ─── NAV ─── */
     nav {
       position: fixed;
@@ -264,8 +275,8 @@
     }
 
     .proof-icon {
-      font-size: 18px;
-      opacity: 0.7;
+      opacity: 0.6;
+      color: var(--text-muted);
     }
 
     /* ─── SECTION HEADERS ─── */
@@ -335,8 +346,16 @@
     }
 
     .pain-icon {
-      font-size: 28px;
-      margin-bottom: 16px;
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border-bright);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      color: var(--text-muted);
     }
 
     .pain-card h3 {
@@ -408,7 +427,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 16px;
+      color: var(--accent);
     }
 
     .phone-contact {
@@ -534,7 +553,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 16px;
+      color: var(--accent);
       flex-shrink: 0;
       margin-top: 2px;
     }
@@ -596,9 +615,16 @@
     }
 
     .feature-icon {
-      font-size: 28px;
-      margin-bottom: 20px;
-      display: block;
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--accent-dim);
+      border: 1px solid rgba(232, 255, 71, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      color: var(--accent);
     }
 
     .feature-card h3 {
@@ -995,7 +1021,10 @@
     <div class="hero-ctas">
       <div class="cta-block">
         <a href="#closer" class="btn-primary">
-          🎙️ Talk to our AI Agent
+          <span class="icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+          </span>
+          Talk to our AI Agent
         </a>
         <span class="cta-hint">Test our live voice agent right now — no sign-up</span>
       </div>
@@ -1010,11 +1039,36 @@
 
   <!-- PROOF BAR -->
   <div class="proof-bar">
-    <div class="proof-item"><span class="proof-icon">⚡</span> HVAC Companies</div>
-    <div class="proof-item"><span class="proof-icon">🔧</span> Plumbers &amp; Electricians</div>
-    <div class="proof-item"><span class="proof-icon">🛡️</span> Insurance Agents</div>
-    <div class="proof-item"><span class="proof-icon">🚗</span> Field Sales Reps</div>
-    <div class="proof-item"><span class="proof-icon">🏗️</span> Contractors</div>
+    <div class="proof-item">
+      <span class="proof-icon icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      </span>
+      HVAC Companies
+    </div>
+    <div class="proof-item">
+      <span class="proof-icon icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+      </span>
+      Plumbers &amp; Electricians
+    </div>
+    <div class="proof-item">
+      <span class="proof-icon icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </span>
+      Insurance Agents
+    </div>
+    <div class="proof-item">
+      <span class="proof-icon icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      </span>
+      Field Sales Reps
+    </div>
+    <div class="proof-item">
+      <span class="proof-icon icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </span>
+      Contractors
+    </div>
   </div>
 
   <!-- PROBLEM -->
@@ -1028,25 +1082,33 @@
 
     <div class="problem-grid">
       <div class="pain-card fade-in">
-        <div class="pain-icon">📵</div>
+        <div class="pain-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.68 13.31a16 16 0 0 0 3.41 2.6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7 2 2 0 0 1 1.72 2v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07C9.44 16.29 8.76 15.6 8.06 14.9"/><path d="M6.16 6.16A19.79 19.79 0 0 0 3.07 14.8a2 2 0 0 0 2 2.18h.1a2 2 0 0 1 2-1.72 12.84 12.84 0 0 0 .7-2.81 2 2 0 0 1 .45-2.11L9.6 9.07"/><line x1="23" y1="1" x2="1" y2="23"/></svg>
+        </div>
         <h3>Calls go unanswered</h3>
         <p>You're on a job site, elbow-deep in work. Your phone rings. You can't answer. That customer calls the next plumber on Google. You never even knew they existed.</p>
       </div>
 
       <div class="pain-card fade-in">
-        <div class="pain-icon">🌙</div>
+        <div class="pain-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </div>
         <h3>Nights belong to the business, not you</h3>
         <p>After a 10-hour day in the field, you sit down to chase invoices, write quotes, and respond to messages. You're exhausted. Mistakes happen. Deals fall through.</p>
       </div>
 
       <div class="pain-card fade-in">
-        <div class="pain-icon">💸</div>
+        <div class="pain-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
         <h3>Hiring admin is too expensive</h3>
         <p>A decent admin costs $40,000–$55,000 a year before benefits. You'd need to add significant revenue just to break even — and then you have to manage them too.</p>
       </div>
 
       <div class="pain-card fade-in">
-        <div class="pain-icon">🧩</div>
+        <div class="pain-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
         <h3>Software needs a full-time user</h3>
         <p>Every app promises to "streamline your workflow." But they all require someone sitting at a desk, logging in, and updating fields. That's not you. You're in the field.</p>
       </div>
@@ -1076,10 +1138,12 @@
     <div class="solution-layout">
       <div class="phone-mockup fade-in">
         <div class="phone-header">
-          <div class="phone-avatar">⚡</div>
+          <div class="phone-avatar">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
           <div class="phone-contact">
             <span class="phone-contact-name">Fieldr Agent</span>
-            <span class="phone-contact-status">● Online — always</span>
+            <span class="phone-contact-status">&#9679; Online — always</span>
           </div>
         </div>
 
@@ -1087,7 +1151,7 @@
           <div class="msg msg-user">
             Send the $500 install invoice to Sarah Johnson, and follow up on the Acme Corp quote we sent last week.
           </div>
-          <div class="msg-meta right">You · just now</div>
+          <div class="msg-meta right">You &middot; just now</div>
 
           <div class="typing-indicator" id="typingIndicator">
             <div class="typing-dot"></div>
@@ -1099,7 +1163,9 @@
 
       <div class="solution-points fade-in">
         <div class="solution-point">
-          <div class="solution-point-icon">📱</div>
+          <div class="solution-point-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+          </div>
           <div>
             <h3>Chat-first. No laptop required.</h3>
             <p>Your agent lives in SMS, WhatsApp, or any messaging app you already use. Send a voice note or a text — it understands both. No logins. No apps to update.</p>
@@ -1107,7 +1173,9 @@
         </div>
 
         <div class="solution-point">
-          <div class="solution-point-icon">🔁</div>
+          <div class="solution-point-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="17 1 21 5 17 9"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><polyline points="7 23 3 19 7 15"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></svg>
+          </div>
           <div>
             <h3>Handles the full back-office loop.</h3>
             <p>From sending quotes and collecting signatures to following up on late payments and answering customer FAQs — your agent handles it from start to finish, without interrupting you.</p>
@@ -1115,7 +1183,9 @@
         </div>
 
         <div class="solution-point">
-          <div class="solution-point-icon">📞</div>
+          <div class="solution-point-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.16 6.16l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
           <div>
             <h3>Never miss a lead again.</h3>
             <p>When a customer calls after hours, your agent answers, qualifies the lead, books the appointment, and notifies you in the morning. Every call captured. Every lead followed up.</p>
@@ -1132,42 +1202,54 @@
 
     <div class="features-grid">
       <div class="feature-card fade-in">
-        <span class="feature-icon">🎛️</span>
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"/><line x1="4" y1="10" x2="4" y2="3"/><line x1="12" y1="21" x2="12" y2="12"/><line x1="12" y1="8" x2="12" y2="3"/><line x1="20" y1="21" x2="20" y2="16"/><line x1="20" y1="12" x2="20" y2="3"/><line x1="1" y1="14" x2="7" y2="14"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="17" y1="16" x2="23" y2="16"/></svg>
+        </div>
         <h3>Human-in-the-Loop Control</h3>
         <p>You decide exactly how much autonomy your agent has. Want quotes auto-sent the moment a customer asks? Done. Prefer the agent drafts it and pings you for a quick thumbs-up first? You've got it.</p>
         <span class="feature-tag">Your rules</span>
       </div>
 
       <div class="feature-card fade-in">
-        <span class="feature-icon">🔌</span>
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        </div>
         <h3>Live in Weeks, Not Quarters</h3>
         <p>We integrate directly with your existing tools — QuickBooks, Jobber, HouseCall Pro, your CRM, whatever you're already using. No rip-and-replace. No downtime. You're running in weeks.</p>
         <span class="feature-tag">Fast deployment</span>
       </div>
 
       <div class="feature-card fade-in">
-        <span class="feature-icon">🔓</span>
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></svg>
+        </div>
         <h3>Zero Lock-In</h3>
         <p>We're confident you'll love the ROI. But if you don't, you can remove the agent cleanly. No contracts that trap you. No proprietary data silos. Your data stays yours.</p>
         <span class="feature-tag">No strings</span>
       </div>
 
       <div class="feature-card fade-in">
-        <span class="feature-icon">🛡️</span>
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
         <h3>Built Custom for Your Business</h3>
         <p>Not a generic off-the-shelf product. We scope your specific workflows, map your customer journey, and build an agent that fits your business like a glove. It knows your pricing, your tone, your rules.</p>
         <span class="feature-tag">Custom-built</span>
       </div>
 
       <div class="feature-card fade-in">
-        <span class="feature-icon">📊</span>
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
         <h3>Full Visibility, No Surprises</h3>
         <p>Every action your agent takes is logged and reviewable. You get a daily summary of what was sent, what was collected, and what needs your attention. You're in control — just not stuck doing it manually.</p>
         <span class="feature-tag">Full audit trail</span>
       </div>
 
       <div class="feature-card fade-in">
-        <span class="feature-icon">🌐</span>
+        <div class="feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
         <h3>Handles Your Customers Professionally</h3>
         <p>Your agent speaks in your brand's voice. It knows your services, your pricing, your FAQs. Customers don't feel like they're talking to a bot — they feel like they're talking to your best employee.</p>
         <span class="feature-tag">On-brand always</span>
@@ -1202,7 +1284,7 @@
       <div class="pricing-card featured fade-in">
         <div class="pricing-badge">Most Popular</div>
         <div class="pricing-title">1–2 Year Term</div>
-        <div class="pricing-price">From <span style="font-size:24px;color:var(--accent);">$800</span><span>/mo</span></div>
+        <div class="pricing-price">Custom <span>pricing</span></div>
         <div class="pricing-desc">Spread the cost over 12–24 months. Same custom build, same ownership at the end. Once paid off: only the small maintenance fee.</div>
         <ul class="pricing-features">
           <li>Everything in the Upfront tier</li>
@@ -1212,7 +1294,12 @@
           <li>Quarterly business reviews with our team</li>
           <li>Lock in your rate for the full term</li>
         </ul>
-        <a href="#closer" class="btn-primary" style="width:100%;justify-content:center;">🎙️ Talk to an Agent Now</a>
+        <a href="#closer" class="btn-primary" style="width:100%;justify-content:center;">
+          <span class="icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+          </span>
+          Talk to an Agent Now
+        </a>
       </div>
 
       <div class="pricing-vs fade-in">
@@ -1233,7 +1320,7 @@
         <div class="metric-label">missed leads after hours</div>
       </div>
       <div class="metric fade-in">
-        <div class="metric-number">2<em>×</em></div>
+        <div class="metric-number">2<em>&times;</em></div>
         <div class="metric-label">more jobs closed per week</div>
       </div>
       <div class="metric fade-in">
@@ -1259,9 +1346,12 @@
       <div class="hero-ctas">
         <div class="cta-block">
           <a href="tel:+1-800-FIELDR" class="btn-primary" style="font-size:17px;padding:18px 36px;">
-            🎙️ Talk to an Agent Now
+            <span class="icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+            </span>
+            Talk to an Agent Now
           </a>
-          <span class="cta-hint">Live voice agent · available 24/7</span>
+          <span class="cta-hint">Live voice agent &middot; available 24/7</span>
         </div>
         <div class="cta-block">
           <a href="mailto:hello@fieldragents.com" class="btn-secondary" style="font-size:15px;">
@@ -1283,7 +1373,7 @@
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="mailto:hello@fieldragents.com">Contact</a></li>
     </ul>
-    <span class="footer-copy">© 2025 Fieldr Agents LLC · fieldragents.com</span>
+    <span class="footer-copy">&copy; 2025 Fieldr Agents LLC &middot; fieldragents.com</span>
   </footer>
 
   <script>
@@ -1292,7 +1382,6 @@
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, i) => {
         if (entry.isIntersecting) {
-          // Stagger siblings slightly
           const siblings = entry.target.parentElement.querySelectorAll('.fade-in');
           let delay = 0;
           siblings.forEach((el, idx) => {
@@ -1315,20 +1404,18 @@
     const agentResponse = `
       <div class="msg msg-agent">
         <span class="agent-label">Fieldr Agent</span>
-        ✅ Invoice sent to Sarah Johnson for $500 — payment link included. She'll get an automatic reminder in 3 days if unpaid.<br/><br/>
-        📧 Follow-up sent to Acme Corp re: the open quote. I included a brief summary of the scope and a reply-to-confirm link. I'll flag it for you again Friday if no response.
+        Invoice sent to Sarah Johnson for $500 &mdash; payment link included. She'll get an automatic reminder in 3 days if unpaid.<br/><br/>
+        Follow-up sent to Acme Corp re: the open quote. I included a brief summary of the scope and a reply-to-confirm link. I'll flag it for you again Friday if no response.
       </div>
-      <div class="msg-meta">Agent · just now · ✓ Delivered</div>
+      <div class="msg-meta">Agent &middot; just now &middot; Delivered</div>
     `;
 
-    // Trigger after a short delay to show animation
     setTimeout(() => {
       typingIndicator.style.display = 'none';
       chatBubble.insertAdjacentHTML('beforeend', agentResponse);
     }, 2800);
 
-    // Loop the chat animation every 12 seconds
-    let chatInterval = setInterval(() => {
+    setInterval(() => {
       const msgs = chatBubble.querySelectorAll('.msg, .msg-meta');
       msgs.forEach(m => m.remove());
 
@@ -1336,13 +1423,12 @@
         <div class="msg msg-user">
           Send the $500 install invoice to Sarah Johnson, and follow up on the Acme Corp quote we sent last week.
         </div>
-        <div class="msg-meta right">You · just now</div>
+        <div class="msg-meta right">You &middot; just now</div>
       `;
       chatBubble.insertAdjacentHTML('beforeend', userMsg);
 
       const newTyping = document.createElement('div');
       newTyping.className = 'typing-indicator';
-      newTyping.id = 'typingIndicator';
       newTyping.innerHTML = `
         <div class="typing-dot"></div>
         <div class="typing-dot"></div>
