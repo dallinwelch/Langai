@@ -1098,6 +1098,140 @@
     }
     .modal-success h3 { margin-bottom: 8px; }
     .modal-success p { color: var(--text-muted); font-size: 15px; }
+
+    /* ─── DRIP CAMPAIGN SECTION ─── */
+    #drip {
+      border-top: 1px solid var(--border);
+    }
+
+    .drip-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+      margin-top: 64px;
+    }
+
+    .drip-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .drip-step {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .drip-step-num {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--accent);
+      background: var(--accent-dim);
+      border: 1px solid rgba(232, 255, 71, 0.2);
+      border-radius: 6px;
+      padding: 4px 8px;
+      flex-shrink: 0;
+      margin-top: 3px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .drip-step h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+      letter-spacing: -0.3px;
+    }
+
+    .drip-step p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .drip-divider {
+      text-align: center;
+      font-size: 10px;
+      color: var(--text-dim);
+      font-family: 'JetBrains Mono', monospace;
+      letter-spacing: 1px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 7px;
+      margin: 2px 0;
+    }
+
+    /* ─── SPECIALIST CALLOUT (PRICING) ─── */
+    .self-managed-note {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border-bright);
+      border-radius: 8px;
+      padding: 14px 16px;
+      font-size: 13px;
+      color: var(--text-dim);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .self-managed-note strong {
+      color: var(--text-muted);
+    }
+
+    .specialist-callout {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, #0a0800 0%, #080808 100%);
+      border: 1px solid #2a2000;
+      border-radius: 12px;
+      padding: 28px 32px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .specialist-callout-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--accent-dim);
+      border: 1px solid rgba(232, 255, 71, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .specialist-callout h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 8px;
+      letter-spacing: -0.4px;
+    }
+
+    .specialist-callout p {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .specialist-callout p em {
+      color: var(--accent);
+      font-style: normal;
+    }
+
+    @media (max-width: 768px) {
+      .drip-layout {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+      .specialist-callout {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1108,6 +1242,7 @@
     <ul class="nav-links">
       <li><a href="#problem">The Problem</a></li>
       <li><a href="#solution">How It Works</a></li>
+      <li><a href="#drip">Use Cases</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#" class="nav-cta" onclick="openFieldrAgent(); return false;">Chat with an Agent</a></li>
     </ul>
@@ -1117,15 +1252,15 @@
   <section id="hero">
     <div class="hero-badge">
       <div class="hero-badge-dot"></div>
-      Live AI Agent Available Now
+      AI Specialist — Not a SaaS Company
     </div>
 
-    <h1>Stop missing leads.<br/>Stop working <em>80-hour weeks.</em><br/>Hire an AI workforce.</h1>
+    <h1>Stop losing to companies<br/>that can afford <em>better AI.</em><br/>Now you can too.</h1>
 
     <p class="hero-sub">
-      You don't need another complicated software tool. You need an employee who doesn't sleep.
-      Fieldr Agents builds custom AI that handles your support, quotes, and payments —
-      so you can focus on the work that actually makes money.
+      Big companies are spending big on AI. Don't fall behind and spend your time stuck doing admin work.
+      Fieldr builds custom AI agents for small and mid-size businesses —
+      the kind that handles your leads, follow-ups, quotes, and payments so you can focus on what AI can't, Close Deals!
     </p>
 
     <div class="hero-ctas">
@@ -1184,10 +1319,10 @@
   <!-- PROBLEM -->
   <section id="problem">
     <span class="section-label">The Owner's Trap</span>
-    <h2>You are losing revenue<br/>because you are <em>stuck doing admin.</em></h2>
+    <h2>You are losing revenue<br/>because you are <em>stuck doing admin work.</em></h2>
     <p class="section-desc">
       Every minute you spend on paperwork is a minute you're not closing jobs.
-      And the calls you miss while you're on-site? Those go straight to your competitor.
+      And while you're buried trying to find reciepts, your larger competitors are spending money on more people just to close more deals.
     </p>
 
     <div class="problem-grid">
@@ -1231,6 +1366,17 @@
         <div>
           <h3>The math is brutal.</h3>
           <p>If you bill $150/hr and spend even 15 hours a week on admin tasks, you're leaving <strong style="color:#fff;">$117,000 a year</strong> on the table. That's not a productivity problem. That's a structural one — and it requires a structural fix.</p>
+        </div>
+      </div>
+
+      <div class="pain-card full-width fade-in" style="background: linear-gradient(135deg, #060a00 0%, #0d0d0d 100%); border-color: #1e2e00;">
+        <div>
+          <div class="pain-stat" style="color: var(--accent); font-size: 34px; letter-spacing: -1px; line-height: 1.15;">You know AI<br/>is the answer.</div>
+          <div class="pain-stat-label" style="margin-top: 12px;">You've seen the demos. Heard the hype. You just don't know where to actually start — and the wrong move costs months and money.</div>
+        </div>
+        <div>
+          <h3>That's exactly why we exist.</h3>
+          <p>Most AI tools are built for companies with engineering teams. We sit down with you, map your exact workflows, and build an agent tailored to your business — not a template. No technical knowledge required. No months of setup. Once your agent is live, you'll be <strong style="color:#fff;">2–3× more productive</strong> than any competitor still doing this manually. We make you cutting edge without the confusion.</p>
         </div>
       </div>
     </div>
@@ -1305,6 +1451,84 @@
     </div>
   </section>
 
+  <!-- DRIP CAMPAIGN -->
+  <section id="drip">
+    <span class="section-label">Use Case — Sales Automation</span>
+    <h2>Your pipeline.<br/><em>On autopilot.</em></h2>
+    <p class="section-desc">
+      The average deal takes 8 touchpoints to close. Most reps quit after 2. Your agent never quits —
+      and it only brings you in when a deal is actually ready to close.
+    </p>
+
+    <div class="drip-layout">
+      <div class="drip-steps fade-in">
+        <div class="drip-step">
+          <span class="drip-step-num">01</span>
+          <div>
+            <h3>You meet a lead. One message to your agent.</h3>
+            <p>"Add Mike Chen from Summit Roofing to a drip — he's warm on the premium tier. Met him at the trade show today."</p>
+          </div>
+        </div>
+        <div class="drip-step">
+          <span class="drip-step-num">02</span>
+          <div>
+            <h3>Agent sends personalized follow-ups in your voice.</h3>
+            <p>Day 1, 3, 7, and 14 — each one referencing your actual conversation. Not a generic blast. A real follow-up that sounds like you wrote it.</p>
+          </div>
+        </div>
+        <div class="drip-step">
+          <span class="drip-step-num">03</span>
+          <div>
+            <h3>Mike replies. Agent handles the full conversation.</h3>
+            <p>Questions, pricing, a quote request, rescheduling — your agent responds, qualifies, and keeps the deal warm. You never touch it.</p>
+          </div>
+        </div>
+        <div class="drip-step">
+          <span class="drip-step-num">04</span>
+          <div>
+            <h3>Agent loops you in only when it's time to close.</h3>
+            <p>"Mike's ready to move forward — he just asked about next steps. Want me to set up a 15-min call for tomorrow?" You show up. You close. That's it.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="phone-mockup fade-in">
+        <div class="phone-header">
+          <div class="phone-avatar">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <div class="phone-contact">
+            <span class="phone-contact-name">Fieldr Agent</span>
+            <span class="phone-contact-status">&#9679; Managing 14 active deals</span>
+          </div>
+        </div>
+
+        <div class="chat-bubble">
+          <div class="msg msg-user">
+            Add Mike Chen, Summit Roofing, to a drip — warm on premium tier, met him at the trade show today.
+          </div>
+          <div class="msg-meta right">You &middot; just now</div>
+
+          <div class="msg msg-agent">
+            <span class="agent-label">Fieldr Agent</span>
+            Done. Mike's enrolled. First email goes out in 2 hours &mdash; Day 3, 7, and 14 follow-ups are queued.<br/><br/>
+            If he replies at any point I'll handle it, and flag you when he's ready to close.
+          </div>
+          <div class="msg-meta">Agent &middot; just now &middot; Delivered</div>
+
+          <div class="drip-divider">— 11 days later —</div>
+
+          <div class="msg msg-agent">
+            <span class="agent-label">Fieldr Agent</span>
+            Mike replied to the Day-7 email. Asked for a quote on 3 units &mdash; I sent it. He just responded: "Looks good. How do we move forward?"<br/><br/>
+            Want me to schedule a close call for tomorrow morning?
+          </div>
+          <div class="msg-meta">Agent &middot; just now</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- FEATURES -->
   <section id="features">
     <span class="section-label">Engineered for Trust &amp; Speed</span>
@@ -1369,41 +1593,46 @@
 
   <!-- PRICING -->
   <section id="pricing">
-    <span class="section-label">The Ownership Model</span>
-    <h2>Buy the asset.<br/><em>Stop renting the seat.</em></h2>
+    <span class="section-label">Simple, Transparent Pricing</span>
+    <h2>Two fees.<br/><em>Zero surprises.</em></h2>
     <p class="section-desc">
-      We don't charge bloated monthly SaaS fees per user. We build your agent, you pay it off, and then you own the software. Forever.
+      Not a SaaS subscription. Not per-seat pricing. Two straightforward fees — one to build your agent, one to run it. That's the whole model.
     </p>
 
     <div class="pricing-layout">
       <div class="pricing-card fade-in">
-        <div class="pricing-title">Upfront Purchase</div>
+        <div class="pricing-title">Setup Fee</div>
         <div class="pricing-price">Custom <span>scoped</span></div>
-        <div class="pricing-desc">Pay once. Own the agent outright. Then just cover a small monthly fee for infrastructure, API costs, and maintenance. No surprises.</div>
+        <div class="pricing-desc">
+          One-time investment to build, configure, and deploy your AI agent. Pay upfront or spread it over 12 or 24 months — same result, your choice.
+        </div>
         <ul class="pricing-features">
           <li>Custom-built for your exact workflows</li>
-          <li>Unlimited users in your business</li>
-          <li>Integration with your existing tools</li>
-          <li>White-glove onboarding &amp; training</li>
-          <li>Ongoing maintenance &amp; updates included</li>
-          <li>You own the software outright</li>
+          <li>Full integration with your existing tools</li>
+          <li>Unlimited users inside your organization</li>
+          <li>White-glove onboarding &amp; team training</li>
+          <li>Flexible: pay upfront, 12-month, or 24-month</li>
         </ul>
-        <a href="#closer" class="btn-secondary" style="width:100%;justify-content:center;">Get a Scope Quote →</a>
+        <a href="#" class="btn-secondary" style="width:100%;justify-content:center;" onclick="openSetupModal(); return false;">Get a Scope Quote →</a>
       </div>
 
       <div class="pricing-card featured fade-in">
-        <div class="pricing-badge">Most Popular</div>
-        <div class="pricing-title">1–2 Year Term</div>
-        <div class="pricing-price">Custom <span>pricing</span></div>
-        <div class="pricing-desc">Spread the cost over 12–24 months. Same custom build, same ownership at the end. Once paid off: only the small maintenance fee.</div>
+        <div class="pricing-badge">Recommended</div>
+        <div class="pricing-title">Monthly Management</div>
+        <div class="pricing-price">Custom <span>/mo</span></div>
+        <div class="pricing-desc">
+          We handle everything — API costs, voice lines, email delivery, maintenance, new automations, and ongoing improvements. You just run your business.
+        </div>
         <ul class="pricing-features">
-          <li>Everything in the Upfront tier</li>
-          <li>No large upfront capital required</li>
-          <li>Full ownership transferred at end of term</li>
-          <li>Priority support &amp; faster updates</li>
-          <li>Quarterly business reviews with our team</li>
-          <li>Lock in your rate for the full term</li>
+          <li>All API &amp; infrastructure costs included</li>
+          <li>Voice lines &amp; email delivery covered</li>
+          <li>Ongoing maintenance &amp; performance tuning</li>
+          <li>New workflow automations as you scale</li>
+          <li>Priority support &amp; quarterly business reviews</li>
         </ul>
+        <div class="self-managed-note">
+          <strong>Prefer to self-manage?</strong> We can train your team and hand everything over. Possible — but we strongly advise against it. The technical overhead is real, and the ROI we generate for you far outweighs the management fee.
+        </div>
         <a href="#" class="btn-primary" style="width:100%;justify-content:center;" onclick="openFieldrAgent(); return false;">
           <span class="icon">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
@@ -1412,9 +1641,18 @@
         </a>
       </div>
 
-      <div class="pricing-vs fade-in">
-        <strong>Compare this to hiring an admin assistant:</strong> $45,000/yr salary + $12,000 benefits + onboarding time + management overhead + sick days + turnover risk.<br/>
-        Your Fieldr Agent works <strong>24/7/365</strong>, never calls in sick, never quits, and costs a fraction of that — and you own it.
+      <div class="specialist-callout fade-in">
+        <div class="specialist-callout-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <h3>We're not a SaaS company. We're an AI specialist.</h3>
+          <p>
+            The Fortune 500 already has AI — bloated, overpriced, sold in enterprise packages they can afford because of scale. A single-owner shop can't compete with that budget. We don't try to sell you software.
+            We build <em>custom AI specifically for small and mid-size businesses</em> who want to punch above their weight. You get the better capabilities than the big players, and built for your exact operation, at a price that delivers ROI from day one.
+            The playing field is leveling. We're here to make sure you're on the right side of it.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -1445,14 +1683,15 @@
 
     <p class="closer-text">
       <strong>The owners who win this decade</strong> won't be the ones who work the hardest —
-      they'll be the ones who figured out how to run a massive operation without drowning in it.
-      Stop losing customers because you were too busy to answer the phone.
-      <strong>Let your agent handle it.</strong>
+      they'll be the ones who leveled the playing field.
+      Large companies have scale. They have AI budgets. They have entire teams.
+      You have Fieldr. And right now, that's the edge.
+      <strong>Let your agent handle everything else.</strong>
     </p>
 
     <div class="final-cta-block fade-in">
-      <h2>Ready to get your time back?</h2>
-      <p>Chat with our live AI agent right now and see exactly how it would handle your business — no sign-up, no credit card, no BS.</p>
+      <h2>Ready to compete on a<br/>level playing field?</h2>
+      <p>Chat with our AI agent right now and see exactly how it would work for your business — no sign-up, no credit card, no BS.</p>
       <div class="hero-ctas">
         <div class="cta-block">
           <a href="#" class="btn-primary" style="font-size:17px;padding:18px 36px;" onclick="openFieldrAgent(); return false;">
