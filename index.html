@@ -421,6 +421,8 @@
       padding: 24px;
       font-family: 'JetBrains Mono', monospace;
       font-size: 13px;
+      height: 440px;
+      overflow: hidden;
     }
 
     .phone-header {
@@ -469,6 +471,8 @@
       flex-direction: column;
       gap: 10px;
       line-height: 1.5;
+      overflow-y: auto;
+      max-height: calc(100% - 80px);
     }
 
     .msg {
@@ -1957,6 +1961,7 @@
     setTimeout(() => {
       typingIndicator.style.display = 'none';
       chatBubble.insertAdjacentHTML('beforeend', agentResponse);
+      chatBubble.scrollTop = chatBubble.scrollHeight;
     }, 2800);
 
     setInterval(() => {
@@ -1970,6 +1975,7 @@
         <div class="msg-meta right">You &middot; just now</div>
       `;
       chatBubble.insertAdjacentHTML('beforeend', userMsg);
+      chatBubble.scrollTop = 0;
 
       const newTyping = document.createElement('div');
       newTyping.className = 'typing-indicator';
@@ -1983,6 +1989,7 @@
       setTimeout(() => {
         newTyping.style.display = 'none';
         chatBubble.insertAdjacentHTML('beforeend', agentResponse);
+        chatBubble.scrollTop = chatBubble.scrollHeight;
       }, 2800);
     }, 12000);
 
