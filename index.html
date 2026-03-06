@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fieldr Agents — Hire an AI Workforce</title>
+  <title>Fieldr Agents: Hire an AI Workforce</title>
   <meta name="description" content="Stop missing leads. Stop working 80-hour weeks. Fieldr Agents builds custom AI that handles your support, quotes, and payments so you can focus on the work that actually makes money." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -74,9 +74,9 @@
     }
 
     .nav-logo {
-      font-size: 17px;
-      font-weight: 700;
-      letter-spacing: -0.4px;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.8px;
       color: var(--text);
       text-decoration: none;
     }
@@ -147,7 +147,20 @@
       margin-bottom: 40px;
     }
 
-    .hero-badge-dot {
+    .hero-logo {
+      font-size: clamp(52px, 9vw, 100px);
+      font-weight: 900;
+      letter-spacing: -4px;
+      color: #fff;
+      margin-bottom: 48px;
+      line-height: 1;
+    }
+
+    .hero-logo span {
+      color: var(--accent);
+    }
+
+        .hero-badge-dot {
       width: 6px;
       height: 6px;
       border-radius: 50%;
@@ -663,9 +676,9 @@
 
     .pricing-layout {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       gap: 24px;
-      margin-top: 64px;
+      margin-top: 40px;
     }
 
     .pricing-card {
@@ -1180,7 +1193,47 @@
       color: var(--text-muted);
     }
 
-    .specialist-callout {
+    .pricing-steps-label {
+      font-size: 14px;
+      color: var(--text-muted);
+      text-align: center;
+      margin-bottom: 8px;
+      letter-spacing: 0.2px;
+    }
+
+    .pricing-step-tag {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .self-managed-card {
+      opacity: 0.75;
+    }
+
+    .self-managed-card:hover {
+      opacity: 1;
+    }
+
+    .self-managed-warning {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .self-managed-warning strong {
+      color: var(--text);
+    }
+
+        .specialist-callout {
       grid-column: 1 / -1;
       background: linear-gradient(135deg, #0a0800 0%, #080808 100%);
       border: 1px solid #2a2000;
@@ -1231,6 +1284,9 @@
       .specialist-callout {
         flex-direction: column;
       }
+      .pricing-layout {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -1250,17 +1306,19 @@
 
   <!-- HERO -->
   <section id="hero">
+    <div class="hero-logo">Fieldr<span>.</span></div>
+
     <div class="hero-badge">
       <div class="hero-badge-dot"></div>
-      AI Specialist — Not a SaaS Company
+      AI Specialist. Not a SaaS Company.
     </div>
 
-    <h1>Stop losing to companies<br/>that can afford <em>better AI.</em><br/>Now you can too.</h1>
+    <h1>The AI revolution<br/>is here. <em>Be part of it.</em></h1>
 
     <p class="hero-sub">
-      Big companies are spending big on AI. Don't fall behind and spend your time stuck doing admin work.
-      Fieldr builds custom AI agents for small and mid-size businesses —
-      the kind that handles your leads, follow-ups, quotes, and payments so you can focus on what AI can't, Close Deals!
+      AI is here to stay, and the businesses that embrace it now will leave everyone else behind.
+      Fieldr builds custom AI agents for small and mid-size businesses that tackle your non-revenue building admin work. We build a range of agents that handles your leads, follow-ups, quotes, and payments,
+      so you can focus on what AI can't do: <strong>close deals.</strong>
     </p>
 
     <div class="hero-ctas">
@@ -1271,7 +1329,7 @@
           </span>
           Chat with our AI Agent
         </a>
-        <span class="cta-hint">Chat with our live AI agent right now — no sign-up</span>
+        <span class="cta-hint">Chat with our live AI agent right now. No sign-up.</span>
       </div>
       <div class="cta-block">
         <a href="#" class="btn-secondary" onclick="openSetupModal(); return false;">
@@ -1347,7 +1405,7 @@
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
         </div>
         <h3>Hiring admin is too expensive</h3>
-        <p>A decent admin costs $40,000–$55,000 a year before benefits. You'd need to add significant revenue just to break even — and then you have to manage them too.</p>
+        <p>A decent admin costs $40,000–$55,000 a year before benefits. You'd need to add significant revenue just to break even. And then you have to manage them too.</p>
       </div>
 
       <div class="pain-card fade-in">
@@ -1361,22 +1419,22 @@
       <div class="pain-card full-width fade-in">
         <div>
           <div class="pain-stat">62%</div>
-          <div class="pain-stat-label">of small business owners say administrative tasks are their #1 time drain — above sales and even the actual work.</div>
+          <div class="pain-stat-label">of small business owners say administrative tasks are their #1 time drain, above sales and even the actual work.</div>
         </div>
         <div>
           <h3>The math is brutal.</h3>
-          <p>If you bill $150/hr and spend even 15 hours a week on admin tasks, you're leaving <strong style="color:#fff;">$117,000 a year</strong> on the table. That's not a productivity problem. That's a structural one — and it requires a structural fix.</p>
+          <p>If you bill $150/hr and spend even 15 hours a week on admin tasks, you're leaving <strong style="color:#fff;">$117,000 a year</strong> on the table. That's not a productivity problem. That's a structural problem that requires a structural fix.</p>
         </div>
       </div>
 
       <div class="pain-card full-width fade-in" style="background: linear-gradient(135deg, #060a00 0%, #0d0d0d 100%); border-color: #1e2e00;">
         <div>
           <div class="pain-stat" style="color: var(--accent); font-size: 34px; letter-spacing: -1px; line-height: 1.15;">You know AI<br/>is the answer.</div>
-          <div class="pain-stat-label" style="margin-top: 12px;">You've seen the demos. Heard the hype. You just don't know where to actually start — and the wrong move costs months and money.</div>
+          <div class="pain-stat-label" style="margin-top: 12px;">You've seen the demos. Heard the hype. You just don't know where to actually start. The wrong move costs months and money.</div>
         </div>
         <div>
           <h3>That's exactly why we exist.</h3>
-          <p>Most AI tools are built for companies with engineering teams. We sit down with you, map your exact workflows, and build an agent tailored to your business — not a template. No technical knowledge required. No months of setup. Once your agent is live, you'll be <strong style="color:#fff;">2–3× more productive</strong> than any competitor still doing this manually. We make you cutting edge without the confusion.</p>
+          <p>Most AI tools are built for companies with engineering teams. We sit down with you, map your exact workflows, and build an agent tailored to your business. Not a template. No technical knowledge required. No months of setup. Once your agent is live, you'll be <strong style="color:#fff;">2–3× more productive</strong> than any competitor still doing this manually. We make you cutting edge without the confusion.</p>
         </div>
       </div>
     </div>
@@ -1387,8 +1445,7 @@
     <span class="section-label">How It Works</span>
     <h2>Just ask,<br/>and <em>it's done.</em></h2>
     <p class="section-desc">
-      No dashboards to learn. No data entry. Your agent works through text —
-      the way you already communicate.
+      No dashboards to learn. No data entry. Your agent works through text, the way you already communicate.
     </p>
 
     <div class="solution-layout">
@@ -1399,7 +1456,7 @@
           </div>
           <div class="phone-contact">
             <span class="phone-contact-name">Fieldr Agent</span>
-            <span class="phone-contact-status">&#9679; Online — always</span>
+            <span class="phone-contact-status">&#9679; Online, always</span>
           </div>
         </div>
 
@@ -1423,8 +1480,8 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
           </div>
           <div>
-            <h3>Chat-first. No laptop required.</h3>
-            <p>Your agent lives in SMS, WhatsApp, or any messaging app you already use. Send a voice note or a text — it understands both. No logins. No apps to update.</p>
+            <h3>Chat-first. No clunkly software.</h3>
+            <p>Your agent lives in SMS, WhatsApp, or any messaging app you already use. Send a voice note or a text. It understands both. No logins. No apps to update.</p>
           </div>
         </div>
 
@@ -1434,7 +1491,7 @@
           </div>
           <div>
             <h3>Handles the full back-office loop.</h3>
-            <p>From sending quotes and collecting signatures to following up on late payments and answering customer FAQs — your agent handles it from start to finish, without interrupting you.</p>
+            <p>From sending quotes and collecting signatures to following up on late payments and answering customer FAQs. Your agent handles it from start to finish, without interrupting you.</p>
           </div>
         </div>
 
@@ -1447,17 +1504,26 @@
             <p>When a customer calls after hours, your agent answers, qualifies the lead, books the appointment, and notifies you in the morning. Every call captured. Every lead followed up.</p>
           </div>
         </div>
+
+        <div class="solution-point">
+          <div class="solution-point-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8 21 12 17 16 21"/></svg>
+          </div>
+          <div>
+            <h3>Need more? We build custom software too.</h3>
+            <p>If an AI agent isn't the right fit, we build fully custom software for your exact workflow. No monthly SaaS fees, no bloated features you'll never use. You own it. We maintain it. One-time build, built around you.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- DRIP CAMPAIGN -->
   <section id="drip">
-    <span class="section-label">Use Case — Sales Automation</span>
+    <span class="section-label">Use Case: Sales Automation</span>
     <h2>Your pipeline.<br/><em>On autopilot.</em></h2>
     <p class="section-desc">
-      The average deal takes 8 touchpoints to close. Most reps quit after 2. Your agent never quits —
-      and it only brings you in when a deal is actually ready to close.
+      The average deal takes 8 touchpoints to close. Most reps quit after 2. Your agent never quits. It only brings you in when a deal is actually ready to close.
     </p>
 
     <div class="drip-layout">
@@ -1466,28 +1532,28 @@
           <span class="drip-step-num">01</span>
           <div>
             <h3>You meet a lead. One message to your agent.</h3>
-            <p>"Add Mike Chen from Summit Roofing to a drip — he's warm on the premium tier. Met him at the trade show today."</p>
+            <p>"Add Mike Chen from Summit Roofing to a drip. He's warm on the premium tier. Met him at the trade show today."</p>
           </div>
         </div>
         <div class="drip-step">
           <span class="drip-step-num">02</span>
           <div>
             <h3>Agent sends personalized follow-ups in your voice.</h3>
-            <p>Day 1, 3, 7, and 14 — each one referencing your actual conversation. Not a generic blast. A real follow-up that sounds like you wrote it.</p>
+            <p>The AI finds the optimal time to reach out. Each message references your actual conversation. Not a generic blast. A real follow-up that sounds like you wrote it.</p>
           </div>
         </div>
         <div class="drip-step">
           <span class="drip-step-num">03</span>
           <div>
             <h3>Mike replies. Agent handles the full conversation.</h3>
-            <p>Questions, pricing, a quote request, rescheduling — your agent responds, qualifies, and keeps the deal warm. You never touch it.</p>
+            <p>Questions, pricing, a quote request, rescheduling. Your agent responds, qualifies, and keeps the deal warm. You never touch it.</p>
           </div>
         </div>
         <div class="drip-step">
           <span class="drip-step-num">04</span>
           <div>
             <h3>Agent loops you in only when it's time to close.</h3>
-            <p>"Mike's ready to move forward — he just asked about next steps. Want me to set up a 15-min call for tomorrow?" You show up. You close. That's it.</p>
+            <p>"Mike's ready to move forward. He just asked about next steps. Want me to set up a 15-min call for tomorrow?" You show up. You close. That's it.</p>
           </div>
         </div>
       </div>
@@ -1505,22 +1571,22 @@
 
         <div class="chat-bubble">
           <div class="msg msg-user">
-            Add Mike Chen, Summit Roofing, to a drip — warm on premium tier, met him at the trade show today.
+            Add Mike Chen, Summit Roofing, to a drip. Warm on premium tier, met him at the trade show today.
           </div>
           <div class="msg-meta right">You &middot; just now</div>
 
           <div class="msg msg-agent">
             <span class="agent-label">Fieldr Agent</span>
-            Done. Mike's enrolled. First email goes out in 2 hours &mdash; Day 3, 7, and 14 follow-ups are queued.<br/><br/>
+            Done. Mike's enrolled. First message goes out in 2 hours &mdash; I'll find the best times to follow up after that.<br/><br/>
             If he replies at any point I'll handle it, and flag you when he's ready to close.
           </div>
           <div class="msg-meta">Agent &middot; just now &middot; Delivered</div>
 
-          <div class="drip-divider">— 11 days later —</div>
+          <div class="drip-divider">· 11 days later ·</div>
 
           <div class="msg msg-agent">
             <span class="agent-label">Fieldr Agent</span>
-            Mike replied to the Day-7 email. Asked for a quote on 3 units &mdash; I sent it. He just responded: "Looks good. How do we move forward?"<br/><br/>
+            Mike replied to a follow-up. Asked for a quote on 3 units &mdash; I sent it. He just responded: "Looks good. How do we move forward?"<br/><br/>
             Want me to schedule a close call for tomorrow morning?
           </div>
           <div class="msg-meta">Agent &middot; just now</div>
@@ -1549,7 +1615,7 @@
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
         </div>
         <h3>Live in Weeks, Not Quarters</h3>
-        <p>We integrate directly with your existing tools — QuickBooks, Jobber, HouseCall Pro, your CRM, whatever you're already using. No rip-and-replace. No downtime. You're running in weeks.</p>
+        <p>We integrate directly with your existing tools: QuickBooks, Jobber, HouseCall Pro, your CRM, whatever you're already using. No rip-and-replace. No downtime. You're running in weeks.</p>
         <span class="feature-tag">Fast deployment</span>
       </div>
 
@@ -1576,7 +1642,7 @@
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
         </div>
         <h3>Full Visibility, No Surprises</h3>
-        <p>Every action your agent takes is logged and reviewable. You get a daily summary of what was sent, what was collected, and what needs your attention. You're in control — just not stuck doing it manually.</p>
+        <p>Every action your agent takes is logged and reviewable. You get a daily summary of what was sent, what was collected, and what needs your attention. You're in control, just not stuck doing it manually.</p>
         <span class="feature-tag">Full audit trail</span>
       </div>
 
@@ -1585,7 +1651,7 @@
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
         </div>
         <h3>Handles Your Customers Professionally</h3>
-        <p>Your agent speaks in your brand's voice. It knows your services, your pricing, your FAQs. Customers don't feel like they're talking to a bot — they feel like they're talking to your best employee.</p>
+        <p>Your agent speaks in your brand's voice. It knows your services, your pricing, your FAQs. Customers don't feel like they're talking to a bot. They feel like they're talking to your best employee.</p>
         <span class="feature-tag">On-brand always</span>
       </div>
     </div>
@@ -1596,15 +1662,18 @@
     <span class="section-label">Simple, Transparent Pricing</span>
     <h2>Two fees.<br/><em>Zero surprises.</em></h2>
     <p class="section-desc">
-      Not a SaaS subscription. Not per-seat pricing. Two straightforward fees — one to build your agent, one to run it. That's the whole model.
+      Not a SaaS subscription. Not per-seat pricing. Two straightforward fees: one to build your agent, one to run it. That's the whole model.
     </p>
+
+    <div class="pricing-steps-label fade-in">Every client pays two things. The only choice is how hands-on you want to be after launch.</div>
 
     <div class="pricing-layout">
       <div class="pricing-card fade-in">
+        <div class="pricing-step-tag">Step 1 &mdash; One Time</div>
         <div class="pricing-title">Setup Fee</div>
         <div class="pricing-price">Custom <span>scoped</span></div>
         <div class="pricing-desc">
-          One-time investment to build, configure, and deploy your AI agent. Pay upfront or spread it over 12 or 24 months — same result, your choice.
+          We scope, build, and deploy your custom AI agent. Pay upfront or spread it over 12 or 24 months. Same result, your choice.
         </div>
         <ul class="pricing-features">
           <li>Custom-built for your exact workflows</li>
@@ -1613,26 +1682,24 @@
           <li>White-glove onboarding &amp; team training</li>
           <li>Flexible: pay upfront, 12-month, or 24-month</li>
         </ul>
-        <a href="#" class="btn-secondary" style="width:100%;justify-content:center;" onclick="openSetupModal(); return false;">Get a Scope Quote →</a>
+        <a href="#" class="btn-secondary" style="width:100%;justify-content:center;" onclick="openSetupModal(); return false;">Get a Scope Quote &rarr;</a>
       </div>
 
       <div class="pricing-card featured fade-in">
         <div class="pricing-badge">Recommended</div>
-        <div class="pricing-title">Monthly Management</div>
+        <div class="pricing-step-tag">Step 2 &mdash; Monthly</div>
+        <div class="pricing-title">We Manage It</div>
         <div class="pricing-price">Custom <span>/mo</span></div>
         <div class="pricing-desc">
-          We handle everything — API costs, voice lines, email delivery, maintenance, new automations, and ongoing improvements. You just run your business.
+          We spend hours every day keeping up with the latest AI so you don't have to. You focus on closing deals. We keep your agent cutting edge, running, and improving.
         </div>
         <ul class="pricing-features">
           <li>All API &amp; infrastructure costs included</li>
           <li>Voice lines &amp; email delivery covered</li>
           <li>Ongoing maintenance &amp; performance tuning</li>
-          <li>New workflow automations as you scale</li>
+          <li>New automations added as your business grows</li>
           <li>Priority support &amp; quarterly business reviews</li>
         </ul>
-        <div class="self-managed-note">
-          <strong>Prefer to self-manage?</strong> We can train your team and hand everything over. Possible — but we strongly advise against it. The technical overhead is real, and the ROI we generate for you far outweighs the management fee.
-        </div>
         <a href="#" class="btn-primary" style="width:100%;justify-content:center;" onclick="openFieldrAgent(); return false;">
           <span class="icon">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
@@ -1641,14 +1708,32 @@
         </a>
       </div>
 
-      <div class="specialist-callout fade-in">
+      <div class="pricing-card self-managed-card fade-in">
+        <div class="pricing-step-tag">Step 2 &mdash; Alternative</div>
+        <div class="pricing-title">You Manage It</div>
+        <div class="pricing-price">$0 <span>/mo</span></div>
+        <div class="pricing-desc">
+          We train your team and hand everything over. You run and maintain the agent yourself with no ongoing fee to us.
+        </div>
+        <ul class="pricing-features">
+          <li>Full handover &amp; team training included</li>
+          <li>Documentation &amp; runbooks provided</li>
+          <li>30-day support window after launch</li>
+        </ul>
+        <div class="self-managed-warning">
+          <strong>Heads up:</strong> AI moves fast. We track new models, updates, and changes every single day so our clients don't have to. If you self-manage, staying current is on you. Most owners find their time is worth more closing deals than managing AI infrastructure.
+        </div>
+        <a href="#" class="btn-secondary" style="width:100%;justify-content:center;" onclick="openSetupModal(); return false;">Talk to Us About This &rarr;</a>
+      </div>
+
+          <div class="specialist-callout fade-in">
         <div class="specialist-callout-icon">
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
         </div>
         <div>
           <h3>We're not a SaaS company. We're an AI specialist.</h3>
           <p>
-            The Fortune 500 already has AI — bloated, overpriced, sold in enterprise packages they can afford because of scale. A single-owner shop can't compete with that budget. We don't try to sell you software.
+            The Fortune 500 already has AI, bloated and overpriced,, sold in enterprise packages they can afford because of scale. A single-owner shop can't compete with that budget. We don't try to sell you software.
             We build <em>custom AI specifically for small and mid-size businesses</em> who want to punch above their weight. You get the better capabilities than the big players, and built for your exact operation, at a price that delivers ROI from day one.
             The playing field is leveling. We're here to make sure you're on the right side of it.
           </p>
@@ -1682,7 +1767,7 @@
     </div>
 
     <p class="closer-text">
-      <strong>The owners who win this decade</strong> won't be the ones who work the hardest —
+      <strong>The owners who win this decade</strong> won't be the ones who work the hardest.
       they'll be the ones who leveled the playing field.
       Large companies have scale. They have AI budgets. They have entire teams.
       You have Fieldr. And right now, that's the edge.
@@ -1691,7 +1776,7 @@
 
     <div class="final-cta-block fade-in">
       <h2>Ready to compete on a<br/>level playing field?</h2>
-      <p>Chat with our AI agent right now and see exactly how it would work for your business — no sign-up, no credit card, no BS.</p>
+      <p>Chat with our AI agent right now and see exactly how it would work for your business. No sign-up, no credit card, no BS.</p>
       <div class="hero-ctas">
         <div class="cta-block">
           <a href="#" class="btn-primary" style="font-size:17px;padding:18px 36px;" onclick="openFieldrAgent(); return false;">
@@ -1719,7 +1804,7 @@
 
       <div id="modalForm">
         <h3>Book Your Free Setup Call</h3>
-        <p class="modal-sub">We'll walk you through exactly how a Fieldr Agent would work for your business — 30 minutes, zero pressure.</p>
+        <p class="modal-sub">We'll walk you through exactly how a Fieldr Agent would work for your business. 30 minutes, zero pressure.</p>
 
         <form id="setupCallForm" action="https://formspree.io/f/xbdzrlde" method="POST">
           <div class="form-row">
@@ -1885,10 +1970,10 @@
           success.style.display = 'block';
           setupForm.reset();
         } else {
-          alert('Something went wrong — please email us directly at hello@fieldragents.com');
+          alert('Something went wrong. Please email us directly at hello@fieldragents.com');
         }
       } catch {
-        alert('Something went wrong — please email us directly at hello@fieldragents.com');
+        alert('Something went wrong. Please email us directly at hello@fieldragents.com');
       }
     });
 
