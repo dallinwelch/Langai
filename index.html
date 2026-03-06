@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
   <style>
     *, *::before, *::after {
       box-sizing: border-box;
@@ -988,6 +989,115 @@
         text-align: center;
       }
     }
+
+    /* ─── SETUP CALL MODAL ─── */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.8);
+      backdrop-filter: blur(4px);
+      z-index: 9000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-overlay.open {
+      display: flex;
+    }
+    .modal-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-bright);
+      border-radius: 16px;
+      padding: 40px;
+      max-width: 480px;
+      width: 100%;
+      position: relative;
+    }
+    .modal-box h3 {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .modal-box .modal-sub {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+    }
+    .modal-close {
+      position: absolute;
+      top: 16px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 24px;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .modal-close:hover { color: var(--text); }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      background: var(--bg);
+      border: 1px solid var(--border-bright);
+      border-radius: 8px;
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      padding: 12px 14px;
+      width: 100%;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      border-color: var(--accent);
+    }
+    .form-group textarea { resize: vertical; min-height: 80px; }
+    .form-row { display: flex; gap: 12px; }
+    .form-row .form-group { flex: 1; }
+    .modal-submit {
+      width: 100%;
+      margin-top: 8px;
+      background: var(--accent);
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 14px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .modal-submit:hover { background: var(--accent-hover); }
+    .modal-success {
+      display: none;
+      text-align: center;
+      padding: 20px 0;
+    }
+    .modal-success .success-icon {
+      font-size: 48px;
+      margin-bottom: 16px;
+    }
+    .modal-success h3 { margin-bottom: 8px; }
+    .modal-success p { color: var(--text-muted); font-size: 15px; }
   </style>
 </head>
 <body>
@@ -999,7 +1109,7 @@
       <li><a href="#problem">The Problem</a></li>
       <li><a href="#solution">How It Works</a></li>
       <li><a href="#pricing">Pricing</a></li>
-      <li><a href="#closer" class="nav-cta">Talk to an Agent</a></li>
+      <li><a href="#" class="nav-cta" onclick="openFieldrAgent(); return false;">Chat with an Agent</a></li>
     </ul>
   </nav>
 
@@ -1020,16 +1130,16 @@
 
     <div class="hero-ctas">
       <div class="cta-block">
-        <a href="#closer" class="btn-primary">
+        <a href="#" class="btn-primary" onclick="openFieldrAgent(); return false;">
           <span class="icon">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           </span>
-          Talk to our AI Agent
+          Chat with our AI Agent
         </a>
-        <span class="cta-hint">Test our live voice agent right now — no sign-up</span>
+        <span class="cta-hint">Chat with our live AI agent right now — no sign-up</span>
       </div>
       <div class="cta-block">
-        <a href="#closer" class="btn-secondary">
+        <a href="#" class="btn-secondary" onclick="openSetupModal(); return false;">
           Book a Setup Call →
         </a>
         <span class="cta-hint">Free 30-min consult with our team</span>
@@ -1294,11 +1404,11 @@
           <li>Quarterly business reviews with our team</li>
           <li>Lock in your rate for the full term</li>
         </ul>
-        <a href="#closer" class="btn-primary" style="width:100%;justify-content:center;">
+        <a href="#" class="btn-primary" style="width:100%;justify-content:center;" onclick="openFieldrAgent(); return false;">
           <span class="icon">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
           </span>
-          Talk to an Agent Now
+          Chat with an Agent Now
         </a>
       </div>
 
@@ -1342,26 +1452,89 @@
 
     <div class="final-cta-block fade-in">
       <h2>Ready to get your time back?</h2>
-      <p>Talk to our live AI agent right now and see exactly how it would handle your business — no sign-up, no credit card, no BS.</p>
+      <p>Chat with our live AI agent right now and see exactly how it would handle your business — no sign-up, no credit card, no BS.</p>
       <div class="hero-ctas">
         <div class="cta-block">
-          <a href="tel:+1-800-FIELDR" class="btn-primary" style="font-size:17px;padding:18px 36px;">
+          <a href="#" class="btn-primary" style="font-size:17px;padding:18px 36px;" onclick="openFieldrAgent(); return false;">
             <span class="icon">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
             </span>
-            Talk to an Agent Now
+            Chat with an Agent Now
           </a>
-          <span class="cta-hint">Live voice agent &middot; available 24/7</span>
+          <span class="cta-hint">Live AI chat &middot; available 24/7</span>
         </div>
         <div class="cta-block">
-          <a href="mailto:hello@fieldragents.com" class="btn-secondary" style="font-size:15px;">
+          <a href="#" class="btn-secondary" style="font-size:15px;" onclick="openSetupModal(); return false;">
             Book a Setup Call →
           </a>
-          <span class="cta-hint">hello@fieldragents.com</span>
+          <span class="cta-hint">Free 30-min consult with our team</span>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- SETUP CALL MODAL -->
+  <div class="modal-overlay" id="setupModal" onclick="if(event.target===this)closeSetupModal()">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeSetupModal()" aria-label="Close">&times;</button>
+
+      <div id="modalForm">
+        <h3>Book Your Free Setup Call</h3>
+        <p class="modal-sub">We'll walk you through exactly how a Fieldr Agent would work for your business — 30 minutes, zero pressure.</p>
+
+        <form id="setupCallForm" action="https://formspree.io/f/xbdzrlde" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="setup-name">Your Name</label>
+              <input type="text" id="setup-name" name="name" placeholder="John Smith" required />
+            </div>
+            <div class="form-group">
+              <label for="setup-biz">Business Name</label>
+              <input type="text" id="setup-biz" name="business" placeholder="Smith HVAC" required />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="setup-email">Email</label>
+              <input type="email" id="setup-email" name="email" placeholder="john@smithhvac.com" required />
+            </div>
+            <div class="form-group">
+              <label for="setup-phone">Phone</label>
+              <input type="tel" id="setup-phone" name="phone" placeholder="(801) 555-0123" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="setup-industry">Industry</label>
+            <select id="setup-industry" name="industry">
+              <option value="">Select your trade…</option>
+              <option>HVAC</option>
+              <option>Plumbing</option>
+              <option>Electrical</option>
+              <option>Roofing</option>
+              <option>Landscaping</option>
+              <option>Cleaning</option>
+              <option>Insurance</option>
+              <option>Field Sales</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="setup-msg">What's your biggest pain point? (optional)</label>
+            <textarea id="setup-msg" name="message" placeholder="Missed calls, invoicing, quotes…"></textarea>
+          </div>
+          <button type="submit" class="modal-submit">Request My Free Consultation →</button>
+        </form>
+      </div>
+
+      <div class="modal-success" id="modalSuccess">
+        <div class="success-icon">
+          <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="#e8ff47" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        <h3>You're on the list!</h3>
+        <p>We'll reach out to <span id="successEmail"></span> within one business day to schedule your call.</p>
+      </div>
+    </div>
+  </div>
 
   <!-- FOOTER -->
   <footer>
@@ -1441,6 +1614,61 @@
         chatBubble.insertAdjacentHTML('beforeend', agentResponse);
       }, 2800);
     }, 12000);
+
+    // ─── Setup Call Modal ───
+    function openSetupModal() {
+      document.getElementById('setupModal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeSetupModal() {
+      document.getElementById('setupModal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeSetupModal();
+    });
+
+    const setupForm = document.getElementById('setupCallForm');
+    setupForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const data = new FormData(setupForm);
+      const email = data.get('email');
+      try {
+        const res = await fetch(setupForm.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          document.getElementById('modalForm').style.display = 'none';
+          const success = document.getElementById('modalSuccess');
+          document.getElementById('successEmail').textContent = email;
+          success.style.display = 'block';
+          setupForm.reset();
+        } else {
+          alert('Something went wrong — please email us directly at hello@fieldragents.com');
+        }
+      } catch {
+        alert('Something went wrong — please email us directly at hello@fieldragents.com');
+      }
+    });
+
+    // ─── ElevenLabs voice agent trigger ───
+    function openFieldrAgent() {
+      const widget = document.getElementById('fieldr-voice-agent');
+      if (widget) {
+        // Dispatch a click on the widget's internal button to open it
+        const shadow = widget.shadowRoot;
+        if (shadow) {
+          const btn = shadow.querySelector('button');
+          if (btn) { btn.click(); return; }
+        }
+        widget.click();
+      }
+    }
   </script>
+
+  <!-- ElevenLabs Conversational AI Widget -->
+  <elevenlabs-convai id="fieldr-voice-agent" agent-id="agent_3801kjxzjkf8e3brbh69cc1s92za"></elevenlabs-convai>
 </body>
 </html>
